@@ -7,7 +7,7 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
 // reducers
-import reducer from './reducers';
+import rootReducer from './reducers';
 
 // styles
 import './index.css';
@@ -19,7 +19,7 @@ import * as serviceWorker from './serviceWorker';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
-  reducer,
+  rootReducer,
   composeEnhancers(applyMiddleware(thunk, logger))
 );
 
