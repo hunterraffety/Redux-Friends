@@ -1,4 +1,4 @@
-import { LOGGING_IN } from '../actions';
+import { LOGGING_IN, LOGIN_SUCCESS } from '../actions';
 
 const initialState = {
   deletingFriend: false,
@@ -17,6 +17,12 @@ export const friendsReducer = (state = initialState, action) => {
         ...state,
         error: '',
         loggingIn: true
+      };
+    case LOGIN_SUCCESS:
+      return {
+        ...state,
+        error: '',
+        loggingIn: false
       };
     default:
       return state;
