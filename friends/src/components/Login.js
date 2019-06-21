@@ -25,12 +25,14 @@ class Login extends React.Component {
     e.preventDefault();
     this.props.login(this.state.credentials).then(res => {
       if (res) {
-        this.props.history.push('/friendsList');
+        this.props.history.push('/friends');
       }
     });
   };
 
   render() {
+    console.log(this.props);
+    console.log(this.state);
     return (
       <div>
         <form onSubmit={this.login}>
@@ -60,8 +62,8 @@ class Login extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  error: state.error,
-  loggingIn: state.loggingIn
+  error: state.friendsReducer.error,
+  loggingIn: state.friendsReducer.loggingIn
 });
 
 export default connect(
